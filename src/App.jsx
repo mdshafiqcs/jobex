@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className='container'>
+      <div className='container min-h-[100vh]'>
         <Outlet />
       </div>
       <Footer />
