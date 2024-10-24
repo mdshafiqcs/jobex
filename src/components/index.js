@@ -7,7 +7,7 @@ import RoleProtectedRoute from "./app/RoleProtectedRoute";
 import Header from "./app/header/Header";
 import Footer from "./app/footer/Footer";
 import AuthLayout from "./app/AuthLayout";
-
+import LoadingButton from "./app/LoadingButton";
 
 export {
   Logo,
@@ -19,4 +19,5 @@ export {
   Header,
   Footer,
   AuthLayout,
+  LoadingButton,
 }
