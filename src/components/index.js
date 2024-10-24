@@ -4,6 +4,7 @@ import UserHomeComponent from "./app/UserHomeComponent";
 import PageWrapper from "./app/PageWrapper";
 import Logo from "./app/Logo";
 import RoleProtectedRoute from "./app/RoleProtectedRoute";
+import Header from "./app/header/Header";
 
 
 export {
@@ -13,4 +14,5 @@ export {
   UserHomeComponent,
   PageWrapper,
   RoleProtectedRoute,
+  Header,
 }
