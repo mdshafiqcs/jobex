@@ -5,6 +5,7 @@ import PageWrapper from "./app/PageWrapper";
 import Logo from "./app/Logo";
 import RoleProtectedRoute from "./app/RoleProtectedRoute";
 import Header from "./app/header/Header";
+import Footer from "./app/footer/Footer";
 
 
 export {
@@ -15,4 +16,5 @@ export {
   PageWrapper,
   RoleProtectedRoute,
   Header,
+  Footer,
 }
