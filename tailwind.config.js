@@ -7,6 +7,14 @@ export default {
   ],
   theme: {
   	extend: {
+			container: {
+        center: true,
+        padding: {
+          DEFAULT: "20px",
+          md:"30px",
+          lg: "60px",
+        },
+      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
