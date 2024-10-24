@@ -1,7 +1,11 @@
 import React from 'react'
+import { CategoryCarousel, Hero } from './home'
 
 export default function UserHomeComponent() {
   return (
-    <div>UserHomeComponent</div>
+    <>
+      <Hero />
+      <CategoryCarousel />
+    </>
   )
 }
