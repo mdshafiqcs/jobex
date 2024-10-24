@@ -11,19 +11,21 @@ function Header() {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   return (
-    <div className='fixed w-full z-10'>
-      <header className='flex bg-white max-w-7xl justify-between items-center mx-auto w-full p-4'>
-        <Logo/>
-        <nav>
-          <div className='flex gap-12 items-center'>
-            <Navbar/>
-            {
-              isLoggedIn ?  <AvatarButton/> :  <AuthButton/>
-            }
-          
-          </div>
-        </nav>
-      </header>
+    <div className=' sticky w-full z-10'>
+      <div className='container mx-auto'>
+        <header className='flex bg-white justify-between items-center mx-auto w-full p-4'>
+          <Logo/>
+          <nav>
+            <div className='flex gap-12 items-center'>
+              <Navbar/>
+              {
+                isLoggedIn ?  <AvatarButton/> :  <AuthButton/>
+              }
+            
+            </div>
+          </nav>
+        </header>
+      </div>
     </div>
   )
 }
