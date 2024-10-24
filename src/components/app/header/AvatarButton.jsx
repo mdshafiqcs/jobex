@@ -28,7 +28,7 @@ function AvatarButton() {
     <Popover open={isOpen} onOpenChange={handleOpenChange}>
       <PopoverTrigger>
       <div className='border border-slate-200 rounded-full p-1'>
-        <Avatar className="w-7 h-7">
+        <Avatar className="w-8 h-8">
           <AvatarImage src={src} />
           <AvatarFallback className=" flex items-center justify-center w-full h-full rounded-full bg-blue-500 border text-white border-blue-300 box-border p-2 text-sm">
             {char.toUpperCase()}

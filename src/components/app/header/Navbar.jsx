@@ -39,10 +39,10 @@ function Navbar() {
           item.isActive ?
           <li key={item.path}>
             <NavLink to={item.path} className={({ isActive }) =>
-              `block py-2 pr-4 pl-3 duration-200 hover:text-orange-700 lg:p-0 
+              `block py-2 pr-4 pl-3 text-lg transition hover:text-orange-700 lg:p-0 
               ${
                 isActive
-                  ? "text-orange-700"
+                  ? "text-orange-700 font-medium"
                   : "text-gray-700"
               }`
             }>
