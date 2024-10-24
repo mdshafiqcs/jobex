@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom"
 import { Footer, Header } from "./components"
+import { Toaster } from "sonner"
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <div className='container min-h-[100vh]'>
         <Outlet />
       </div>
+      <Toaster />
       <Footer />
       </>
   )
