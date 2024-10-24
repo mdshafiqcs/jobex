@@ -12,8 +12,8 @@ function Header() {
 
   return (
     <div className=' sticky w-full z-10 bg-white shadow-sm'>
-      <div className='container mx-auto'>
-        <header className='flex bg-white justify-between items-center mx-auto w-full p-4'>
+      <div className='container'>
+        <header className='flex bg-white justify-between items-center mx-auto w-full py-4'>
           <Logo/>
           <nav>
             <div className='flex gap-12 items-center'>
