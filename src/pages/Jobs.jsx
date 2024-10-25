@@ -31,7 +31,7 @@ function Jobs() {
           jobs.length <= 0 ? <div className='text-center p-4'>No jobs found</div> :
           <div className='flex-1 h-[88vh] overflow-y-auto p-4 pb-10 pt-0'>
             <h1 className='mb-2 font-medium text-slate-700'>Search Result: ({paginateOption?.itemCount || 0})</h1>
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3'>
               {
                 jobs.map((job) => (
                   <div key={job._id}>
