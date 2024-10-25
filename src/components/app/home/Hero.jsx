@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Search } from 'lucide-react'
 import React from 'react'
+import { HeroSearchBox } from './index.js'
 
 function Hero() {
   return (
@@ -16,14 +17,7 @@ function Hero() {
         <p className='text-slate-500 md:text-lg xl:text-xl'>
           50+ Jobs daily posted. 1000+ Employers
         </p>
-        <div className='flex min-w-[400px] md:w-[70%] xl:w-[50%] h-[50px] shadow-lg border border-slate-200 pl-3 rounded-full items-center gap-4 mx-auto mt-5 overflow-hidden'>
-          <input 
-          type="text" 
-          placeholder='search' 
-          className='outline-none border-none w-full px-3 text-slate-600' 
-          />
-          <Button className=" bg-orange-700 hover:bg-orange-600 h-[50px] "><Search className='h-5 w-5 '/></Button>
-        </div>
+        <HeroSearchBox />
       </div>
     </div>
   )
