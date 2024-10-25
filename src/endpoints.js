@@ -13,8 +13,8 @@ const userUpdateProfile = `${userUrl}/update-profile`
 const userUpdateResume = `${userUrl}/update-resume`
 const userLogout = `${userUrl}/logout`
 
-const userAllJob = (currentPage = 1, limit = 10) => {
-  return `${userUrl}/job?page=${currentPage}&limit=${limit}`;
+const userAllJob = (currentPage = 1, limit = 10, keyword = "") => {
+  return `${userUrl}/job?page=${currentPage}&limit=${limit}&keyword=${keyword}`;
 }
 const userJobById = (jobId) => {
   return `${userUrl}/job/id=${jobId}`;
