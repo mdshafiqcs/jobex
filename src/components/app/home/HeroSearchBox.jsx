@@ -16,12 +16,18 @@ export default function HeroSearchBox() {
     dispatch(storeSearchQuery(query));
     navigate('/search-job')
   }
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      searchJobHandler();
+    }
+  };
 
   return (
     <div className='flex min-w-[400px] md:w-[70%] xl:w-[50%] h-[50px] shadow-lg border border-slate-200 pl-3 rounded-full items-center gap-4 mx-auto mt-5 overflow-hidden'>
       <input 
       type="text" 
       onChange={(e) => setQuery(e.target.value)}
+      onKeyDown={handleKeyDown}
       value={query}
       placeholder='search' 
       className='outline-none border-none w-full px-3 text-slate-600' 

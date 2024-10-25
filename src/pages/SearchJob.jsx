@@ -28,6 +28,12 @@ export default function SearchJob() {
     dispatch(storeSearchQuery(query));
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      searchJobHandler();
+    }
+  };
+
   return (
     <div className='mt-5'>
 
@@ -35,6 +41,7 @@ export default function SearchJob() {
         <input 
         type="text" 
         onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={handleKeyDown}
         value={query}
         placeholder='search' 
         className='outline-none border-none w-full px-3 text-slate-600' 
