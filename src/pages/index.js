@@ -12,6 +12,7 @@ import RecruiterJobs from "./RecruiterJobs";
 import Companies from "./Companies";
 import CompanyDetails from "./CompanyDetails";
 import CreateCompanyPage from "./CreateCompanyPage";
+import EditCompanyPage from "./EditCompanyPage";
 
 export {
   Home,
@@ -28,4 +29,5 @@ export {
   Companies,
   CompanyDetails,
   CreateCompanyPage,
+  EditCompanyPage,
 }
