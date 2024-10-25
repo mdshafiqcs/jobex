@@ -1,6 +1,7 @@
 import React from 'react'
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { useState } from 'react'
 
 function FilterCard() {
 
@@ -19,6 +20,13 @@ function FilterCard() {
     }
   ]
 
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const changeHandler = (value) => {
+    setSelectedValue(value);
+    console.log("value = ", value);
+  }
+
   return (
     <div className='w-full bg-white p-3 rounded-md'>
       <h1 className='font-bold text-lg text-slate-700'>Filter Jobs</h1>
@@ -28,13 +36,13 @@ function FilterCard() {
         filterData.map((data) => (
           <div key={data.type} className='my-2'>
             <h1 className='font-medium text-lg text-slate-600'>{data.type}</h1>
-            <RadioGroup>
+            <RadioGroup value={selectedValue} onValueChange={changeHandler}>
             {
               data.items.map(item => (
 
                 <div key={item} className='flex items-center space-x-2'>
-                  <RadioGroupItem value={item}/>
-                  <Label className="text-slate-600">{item}</Label>
+                  <RadioGroupItem id={item} value={item}/>
+                  <Label htmlFor={item} className="text-slate-600">{item}</Label>
                 </div>
               ))
             }
