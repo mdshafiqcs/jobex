@@ -1,7 +1,7 @@
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 import { AuthLayout, PageNotFound, RoleProtectedRoute } from './components'
-import { About, Contact, Home, JobDetailsPage, Jobs, Login, PrivacyPolicy, Profile, Signup, TermsCondition } from './pages'
+import { About, Contact, Home, JobDetailsPage, Jobs, Login, PrivacyPolicy, Profile, RecruiterJobs, Signup, TermsCondition } from './pages'
 import App from './App'
 import { routes, UserRoleEnum } from './constants'
 
@@ -24,6 +24,15 @@ const router = createBrowserRouter(
           restrictedRoles={[UserRoleEnum.recruiter]} 
         />
       } />
+
+      <Route path={routes.recruiterJobs} element={( 
+        <AuthLayout authRequired > 
+          <RoleProtectedRoute 
+            element={<RecruiterJobs />} 
+            restrictedRoles={[UserRoleEnum.jobseeker, null, undefined, ""]} 
+          />
+        </AuthLayout>  
+      )} />
 
       <Route path={routes.profile} element={( <AuthLayout authRequired > <Profile/> </AuthLayout>  )} />
       <Route path={routes.login} element={( <AuthLayout authRequired={false}> <Login/> </AuthLayout>  )} />

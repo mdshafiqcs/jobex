@@ -8,6 +8,7 @@ import Login from "./Login";
 import Profile from "./Profile";
 import Jobs from "./Jobs";
 import JobDetailsPage from "./JobDetailsPage";
+import RecruiterJobs from "./RecruiterJobs";
 
 export {
   Home,
@@ -20,4 +21,5 @@ export {
   Profile,
   Jobs,
   JobDetailsPage,
+  RecruiterJobs,
 }
