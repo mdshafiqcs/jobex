@@ -6,6 +6,7 @@ import Contact from "./Contact";
 import Signup from "./Signup";
 import Login from "./Login";
 import Profile from "./Profile";
+import Jobs from "./Jobs";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   Signup,
   Login,
   Profile,
+  Jobs,
 }
