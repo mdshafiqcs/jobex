@@ -34,12 +34,6 @@ export default function SearchJob() {
     }
   };
 
-  useEffect(() => {
-    return () => {
-      dispatch(addSearchedJobs([]));
-      dispatch(storeSearchQuery(""));
-    }
-  }, [dispatch])
 
   return (
     <div className='mt-5'>
