@@ -10,6 +10,7 @@ import Jobs from "./Jobs";
 import JobDetailsPage from "./JobDetailsPage";
 import RecruiterJobs from "./RecruiterJobs";
 import Companies from "./Companies";
+import CompanyDetails from "./CompanyDetails";
 
 export {
   Home,
@@ -24,4 +25,5 @@ export {
   JobDetailsPage,
   RecruiterJobs,
   Companies,
+  CompanyDetails,
 }
