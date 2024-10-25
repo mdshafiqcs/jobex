@@ -7,10 +7,10 @@ export default function Footer() {
   return (
       <footer className="bg-white border-y">
           <div className=" container py-6 lg:py-8">
-              <div className="md:flex md:justify-between">
-                  <div className="mb-6 md:mb-0 max-w-sm">
+              <div className="md:flex gap-10 md:justify-between">
+                  <div className="mb-6 md:mb-0">
                       <Logo/> <br />
-                      <p className="text-justify text-slate-600">{`Connecting talent with opportunity. Our platform empowers recruiters to post job offerings and helps job seekers find their perfect match.`}</p>
+                      <p className="text-justify text-slate-600 sm:max-w-sm lg:max-w-md xl:max-w-lg ">{`Connecting talent with opportunity. Our platform empowers recruiters to post job offerings and helps job seekers find their perfect match.`}</p>
                   </div>
                   <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                       <div>
@@ -92,7 +92,7 @@ export default function Footer() {
               </div>
           </div>
           <hr className=" border-gray-200 sm:mx-auto" />
-            <div className="container py-6 lg:py-8 sm:flex sm:items-center sm:justify-between">
+            <div className="container py-6 flex flex-col items-center lg:py-8 sm:flex-row sm:items-center sm:justify-between">
                 <span className="text-sm text-gray-500 sm:text-center">
                     © {currentYear}&nbsp;
                     Shafiq Khan
