@@ -16,6 +16,27 @@ const getAllCompanies = asyncWrapper(async(currentPage = 1, limit = 10, keyword=
   return response.data.data;
 })
 
+
+const registerCompany = async (formData) => {
+
+  const respnose = await fetch(endpoints.recruiterRegisterCompany, {
+    method: "POST",
+    credentials:"include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
+
+  const responseBody = await respnose.json();
+
+  if(!respnose.ok) {
+    throw new Error(responseBody.message);
+  }
+  return responseBody;
+}
+
 export default {
   getAllCompanies,
+  registerCompany,
 }
