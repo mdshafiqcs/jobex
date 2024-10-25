@@ -5,6 +5,7 @@ import { PURGE } from "redux-persist";
 const initialState = {
   allJob: [],
   appliedJobs: [],
+  searchQuery: "",
 }
 
 const jobSlice = createSlice({
@@ -18,6 +19,10 @@ const jobSlice = createSlice({
     addAppliedJobs: (state, action) => {
       const items = action.payload || [];
       state.appliedJobs = items;
+    },
+
+    storeSearchQuery: (state, action) => {
+      state.searchQuery = action.payload;
     },
 
     applyJob: (state, action) => {
@@ -39,7 +44,7 @@ const jobSlice = createSlice({
   },
 })
 
-export const { addJobs, addAppliedJobs, applyJob } = jobSlice.actions;
+export const { addJobs, addAppliedJobs, applyJob, storeSearchQuery } = jobSlice.actions;
 
 const jobReducer = jobSlice.reducer;
 
