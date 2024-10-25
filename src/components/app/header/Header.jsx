@@ -23,7 +23,7 @@ function Header() {
   }
 
   return (
-    <div className=' sticky w-full z-10 bg-white shadow-sm'>
+    <div className='sticky w-full z-10 bg-white shadow-sm'>
       <div className='container'>
         <header className='flex bg-white justify-between items-center mx-auto w-full py-4'>
           <Logo/>

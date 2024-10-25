@@ -34,7 +34,7 @@ function CategoryCarousel() {
   }
 
   return (
-    <Carousel className="w-full max-w-xs md:max-w-xl mx-auto">
+    <Carousel className="w-full max-w-[240px] sm:max-w-[300px] md:max-w-xl mx-auto">
       <CarouselContent className="-ml-1">
         {categories.map((item) => (
           <CarouselItem key={item} className="pl-1 md:basis-1/2 lg:basis-1/3">
