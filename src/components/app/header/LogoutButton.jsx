@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Loader2 } from "lucide-react"
 import { handleLogout } from '@/utils';
 import { useNavigate } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 
 
-function LogoutButton({closePopover }) {
+function LogoutButton({closePopover, className, onComplete }) {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,13 @@ function LogoutButton({closePopover }) {
 
     await handleLogout(
       () => {
-        closePopover()
+        if(closePopover){
+          closePopover()
+        }
+
+        if(onComplete){
+          onComplete(true);
+        }
         setLoading(false)
 
       },
@@ -26,7 +33,8 @@ function LogoutButton({closePopover }) {
   }
 
   return (
-    <button className="flex items-center px-4 py-1 pb-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md w-full text-start " onClick={logout}>
+    <button className={cn("flex items-center px-4 py-1 pb-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md w-full text-start", className)}
+      onClick={logout}>
       {
         loading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> please wait</>  : <span>Logout</span>
       }
