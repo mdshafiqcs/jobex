@@ -1,7 +1,7 @@
 import { JobCard } from '@/components/app/jobs';
 import { Button } from '@/components/ui/button';
-import { useGetJobs } from '@/hooks';
-import { storeSearchQuery } from '@/store/jobSlice';
+import { useGetJobs, useSearchJobs } from '@/hooks';
+import { addSearchedJobs, storeSearchQuery } from '@/store/jobSlice';
 import { Search } from 'lucide-react';
 import { Loader2 } from 'lucide-react';
 import React from 'react'
@@ -13,15 +13,15 @@ import { useDispatch } from 'react-redux';
 export default function SearchJob() {
   const dispatch = useDispatch();
 
-  const jobs = useSelector(state => state.job.allJob) || []
+
+  const jobs = useSelector(state => state.job.searchedJobs) || []
   const searchQuery = useSelector(state => state.job.searchQuery)
+  const [query, setQuery] = React.useState(searchQuery || '');
 
   const [currentPage, setCurrentPage] =  useState(1);
   const [limit, setLimit] =  useState(10);
 
-  const {loading,  paginateOption } = useGetJobs(currentPage, limit)
-
-  const [query, setQuery] = React.useState(searchQuery || '');
+  const {loading,  paginateOption } = useSearchJobs(currentPage, limit)
 
 
   const searchJobHandler = () => {
@@ -33,6 +33,13 @@ export default function SearchJob() {
       searchJobHandler();
     }
   };
+
+  useEffect(() => {
+    return () => {
+      dispatch(addSearchedJobs([]));
+      dispatch(storeSearchQuery(""));
+    }
+  }, [dispatch])
 
   return (
     <div className='mt-5'>

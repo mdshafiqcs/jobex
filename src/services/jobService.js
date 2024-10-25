@@ -2,9 +2,9 @@ import endpoints from "@/endpoints";
 import { asyncWrapper } from "@/utils";
 import axios from "axios";
 
-const getAllJobs = asyncWrapper(async(currentPage = 1, limit = 10) => {
+const getAllJobs = asyncWrapper(async(currentPage = 1, limit = 10, keyword = "") => {
   const response = await axios.get(
-    endpoints.userAllJob(currentPage, limit), 
+    endpoints.userAllJob(currentPage, limit, keyword), 
     {
       headers: {
       'Accept': 'application/json',
