@@ -20,7 +20,6 @@ function CategoryCarousel() {
     "Backend Developer",
     "Fullstack Web Developer",
     "Graphics Designer",
-    "Data Science",
     "Blockchain",
     "Video Editing",
   ]
