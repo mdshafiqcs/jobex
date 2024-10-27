@@ -13,9 +13,14 @@ const userUpdateProfile = `${userUrl}/update-profile`
 const userUpdateResume = `${userUrl}/update-resume`
 const userLogout = `${userUrl}/logout`
 
-const userAllJob = ({currentPage = 1, limit = 10, keyword = "", locationId="", categoryId="", minSalary="", maxSalary=""}) => {
+const userAllJob = ({currentPage = 1, limit = 10 }) => {
 
-  let url = `${userUrl}/job?page=${currentPage}&limit=${limit}`;
+  return `${userUrl}/job?page=${currentPage}&limit=${limit}`;;
+}
+
+const userSearchJob = ({currentPage = 1, limit = 10, keyword = "", locationId="", categoryId="", minSalary="", maxSalary=""}) => {
+
+  let url = `${userUrl}/job/search?page=${currentPage}&limit=${limit}`;
 
   if(keyword) url += `&keyword=${keyword}`;
   if(locationId) url += `&locationId=${locationId}`;
@@ -25,6 +30,9 @@ const userAllJob = ({currentPage = 1, limit = 10, keyword = "", locationId="", c
 
   return url;
 }
+
+
+
 const userJobById = (jobId) => {
   return `${userUrl}/job/id=${jobId}`;
 }
@@ -87,6 +95,7 @@ export default {
   userUpdateResume,
   userLogout,
   userAllJob,
+  userSearchJob,
   userJobById,
   userAppliedJobs,
   getRecruiter,
