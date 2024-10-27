@@ -40,8 +40,10 @@ const searchSlice = createSlice({
       state.categoryId = action.payload || "";
     },
     setSalary: (state, action) => {
-      state.min = action.payload?.min || 1000;
-      state.max = action.payload?.max || 100000000;
+      state.salary = {
+        min: action.payload?.min || 1000,
+        max: action.payload?.max || 100000000,
+      };
     },
   },
   extraReducers: (builder) => {
