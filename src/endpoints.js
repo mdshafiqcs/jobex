@@ -13,8 +13,17 @@ const userUpdateProfile = `${userUrl}/update-profile`
 const userUpdateResume = `${userUrl}/update-resume`
 const userLogout = `${userUrl}/logout`
 
-const userAllJob = (currentPage = 1, limit = 10, keyword = "") => {
-  return `${userUrl}/job?page=${currentPage}&limit=${limit}&keyword=${keyword}`;
+const userAllJob = ({currentPage = 1, limit = 10, keyword = "", locationId="", categoryId="", minSalary="", maxSalary=""}) => {
+
+  let url = `${userUrl}/job?page=${currentPage}&limit=${limit}`;
+
+  if(keyword) url += `&keyword=${keyword}`;
+  if(locationId) url += `&locationId=${locationId}`;
+  if(categoryId) url += `&categoryId=${categoryId}`;
+  if(minSalary) url += `&minSalary=${minSalary}`;
+  if(maxSalary) url += `&maxSalary=${maxSalary}`;
+
+  return url;
 }
 const userJobById = (jobId) => {
   return `${userUrl}/job/id=${jobId}`;
@@ -37,7 +46,11 @@ const recruiterLogout = `${recruiterUrl}/logout`
 const recruiterRegisterCompany = `${recruiterUrl}/company/register`
 
 const recruiterAllCompanies = (currentPage = 1, limit = 10, keyword = "") => {
-  return `${recruiterUrl}/company?page=${currentPage}&limit=${limit}&keyword=${keyword}`;
+  let url = `${recruiterUrl}/company?page=${currentPage}&limit=${limit}`;
+
+  if(keyword) url += `&keyword=${keyword}`;
+
+  return url;
 }
 
 const recruiterCompanyById = (companyId) => {
