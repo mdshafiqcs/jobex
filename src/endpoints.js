@@ -12,6 +12,8 @@ const getUser = userUrl;
 const userUpdateProfile = `${userUrl}/update-profile`
 const userUpdateResume = `${userUrl}/update-resume`
 const userLogout = `${userUrl}/logout`
+const userGetLocations = `${userUrl}/common/locations`
+const userGetCategories = `${userUrl}/common/categories`
 
 const userAllJob = ({currentPage = 1, limit = 10 }) => {
 
@@ -52,6 +54,8 @@ const getRecruiter = recruiterUrl;
 const recruiterUpdateProfile = `${recruiterUrl}/update-profile`
 const recruiterLogout = `${recruiterUrl}/logout`
 const recruiterRegisterCompany = `${recruiterUrl}/company/register`
+const recruiterGetLocations = `${recruiterUrl}/common/locations`
+const recruiterGetCategories = `${recruiterUrl}/common/categories`
 
 const recruiterAllCompanies = (currentPage = 1, limit = 10, keyword = "") => {
   let url = `${recruiterUrl}/company?page=${currentPage}&limit=${limit}`;
@@ -94,6 +98,8 @@ export default {
   userUpdateProfile,
   userUpdateResume,
   userLogout,
+  userGetLocations,
+  userGetCategories,
   userAllJob,
   userSearchJob,
   userJobById,
@@ -101,6 +107,8 @@ export default {
   getRecruiter,
   recruiterUpdateProfile,
   recruiterLogout,
+  recruiterGetLocations,
+  recruiterGetCategories,
   recruiterRegisterCompany,
   recruiterAllCompanies,
   recruiterCompanyById,
