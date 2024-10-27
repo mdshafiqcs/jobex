@@ -8,9 +8,20 @@ import moment from 'moment';
 import { useSelector } from 'react-redux'
 import { ApplyButton } from '.'
 import { helper } from '@/utils'
+import { cn } from '@/lib/utils'
 
 function JobCard({job}) {
   const timeAgo = moment(job.createdAt).fromNow();
+
+  const daysLeft = helper.getDaysLeft(job.deadline);
+
+  let daysLeftText = "";
+
+  if (daysLeft === 0) {
+    daysLeftText = "Last day";
+  } else {
+    daysLeftText = `${daysLeft} day${daysLeft > 1 ? 's' : ''} left`;
+  }
 
   return (
     
@@ -33,13 +44,18 @@ function JobCard({job}) {
             job.isNegotiable ? "Negotiable" : <span>{helper.formatPrice(job.minSalary)} - {helper.formatPrice(job.maxSalary)} Yearly</span>
           }
         </Badge>
+
       </div>
-      <div className='flex justify-between items-center mt-5'>
-        <div className='flex gap-2'>
+
+      <div className='flex flex-wrap justify-between items-center mt-5'>
+        <div className='flex flex-wrap items-center gap-2'>
           <Link to={`${routes.jobs}/${job._id}`} >
             <Button size="sm" className="bg-orange-600 hover:bg-orange-700">Details</Button>
           </Link> 
-          <ApplyButton job={job}/>
+
+          <Button variant={"outline"} className={cn(" text-sm pointer-events-none  ", daysLeft < 3 ? 'text-red-600 border-red-600/30' : 'text-teal-600 border-teal-600/30')} size="sm">
+            {daysLeftText}
+          </Button>
         </div>
         <Button size="sm" variant="ghost" className="rounded-full"> <Heart/> </Button>
       </div>
