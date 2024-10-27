@@ -1,7 +1,7 @@
 import { FilterCard, JobCard } from '@/components/app/jobs';
 import { Button } from '@/components/ui/button';
-import { useGetJobs, useSearchJobs } from '@/hooks';
-import { addSearchedJobs, storeSearchQuery } from '@/store/jobSlice';
+import { useSearchJobs } from '@/hooks';
+import { setKeyword } from '@/store/searchSlice';
 import { Search } from 'lucide-react';
 import { Loader2 } from 'lucide-react';
 import React from 'react'
@@ -14,18 +14,15 @@ export default function SearchJob() {
   const dispatch = useDispatch();
 
 
-  const jobs = useSelector(state => state.job.searchedJobs) || []
-  const searchQuery = useSelector(state => state.job.searchQuery)
-  const [query, setQuery] = React.useState(searchQuery || '');
+  const jobs = useSelector(state => state.search.jobs) || []
+  const keyword = useSelector(state => state.search.keyword)
+  const [query, setQuery] = React.useState(keyword || '');
 
-  const [currentPage, setCurrentPage] =  useState(1);
-  const [limit, setLimit] =  useState(10);
-
-  const {loading,  paginateOption } = useSearchJobs(currentPage, limit)
+  const {loading,  paginateOption } = useSearchJobs()
 
 
   const searchJobHandler = () => {
-    dispatch(storeSearchQuery(query));
+    dispatch(setKeyword(query));
   }
 
   const handleKeyDown = (e) => {
@@ -40,7 +37,7 @@ export default function SearchJob() {
         
 
         <div className='flex gap-5 mx-auto '>
-          <div className='w-[100px] md:w-[200px] mt-20'>
+          <div className='w-[100px] md:w-[200px]'>
             <FilterCard />
           </div>
 

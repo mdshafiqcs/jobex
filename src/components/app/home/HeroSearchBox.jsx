@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { storeSearchQuery } from '@/store/jobSlice';
+import { setKeyword } from '@/store/searchSlice';
 import { Search } from 'lucide-react'
 import React from 'react'
 import { useDispatch } from 'react-redux';
@@ -13,7 +13,8 @@ export default function HeroSearchBox() {
   const [query, setQuery] = React.useState('');
 
   const searchJobHandler = () => {
-    dispatch(storeSearchQuery(query));
+    console.log(query);
+    dispatch(setKeyword(query));
     navigate('/search-job')
   }
   const handleKeyDown = (e) => {

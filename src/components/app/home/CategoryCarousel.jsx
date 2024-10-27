@@ -9,7 +9,7 @@ import {
 import { Card } from "@/components/ui/card"
 import { Button } from '@/components/ui/button'
 import { useDispatch } from 'react-redux'
-import { storeSearchQuery } from '@/store/jobSlice'
+import { setKeyword } from '@/store/searchSlice'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -28,7 +28,7 @@ function CategoryCarousel() {
   const navigate = useNavigate();
 
   const handleClick = (category) => {
-    dispatch(storeSearchQuery(category));
+    dispatch(setKeyword(category));
     navigate('/search-job');
   }
 
