@@ -19,7 +19,7 @@ const useGetJobs = ({currentPage = 1, limit = 9}) => {
       setLoading(true);
       try {
 
-        const response = await jobService.getAllJobs(currentPage, limit);
+        const response = await jobService.getAllJobs({currentPage, limit});
         dispatch(addJobs(response.jobs))
         setPaginateOption({...response, jobs: undefined});
 

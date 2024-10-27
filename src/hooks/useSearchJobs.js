@@ -20,7 +20,7 @@ const useSearchJobs = ({currentPage = 1, limit = 9}) => {
       setLoading(true);
       try {
 
-        const response = await jobService.getAllJobs(currentPage, limit, keyword);
+        const response = await jobService.getAllJobs({currentPage, limit, keyword});
         dispatch(addSearchedJobs(response.jobs))
         setPaginateOption({...response, jobs: undefined});
 
