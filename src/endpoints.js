@@ -18,7 +18,7 @@ const userAllJob = ({currentPage = 1, limit = 10 }) => {
   return `${userUrl}/job?page=${currentPage}&limit=${limit}`;;
 }
 
-const userSearchJob = ({currentPage = 1, limit = 10, keyword = "", locationId="", categoryId="", minSalary="", maxSalary=""}) => {
+const userSearchJob = ({currentPage = 1, limit = 10, keyword, locationId, categoryId, minSalary, maxSalary}) => {
 
   let url = `${userUrl}/job/search?page=${currentPage}&limit=${limit}`;
 
