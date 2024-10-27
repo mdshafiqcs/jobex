@@ -10,7 +10,7 @@ const initialState = {
   locationId: "",
   categoryId: "",
   salary: {
-    min: 1000, 
+    min: 10, 
     max: 100000000,
   },
   jobs: [],
@@ -45,6 +45,11 @@ const searchSlice = createSlice({
         max: action.payload?.max || 100000000,
       };
     },
+    clearFilter: (state, action) => {
+      state.salary = { min: 10, max: 100000000 };
+      state.locationId = "";
+      state.categoryId = "";
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, () => {
@@ -61,6 +66,7 @@ export const {
   setLocationId, 
   setCategoryId, 
   setSalary, 
+  clearFilter,
 } = searchSlice.actions;
 
 const searchReducer = searchSlice.reducer;
