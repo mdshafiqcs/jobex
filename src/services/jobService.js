@@ -21,6 +21,25 @@ const getAllJobs = async({currentPage = 1, limit = 9}) => {
   }
 }
 
+const searchJobs = async({currentPage, limit, keyword, locationId, categoryId, minSalary, maxSalary}) => {
+
+  try {
+    const response = await axios.get(
+      endpoints.userSearchJob({currentPage, limit, keyword, locationId, categoryId, minSalary, maxSalary}), 
+        {
+          headers: {
+          'Accept': 'application/json',
+          }, 
+          withCredentials: true,
+        }
+      );
+    
+      return response.data.data;
+  } catch (error) {
+    throw error.response.data; 
+  }
+}
+
 const getJobById = async(jobId) => {
 
   try {
@@ -85,4 +104,5 @@ export default {
   getJobById,
   getAppliedJobs,
   applyJob,
+  searchJobs,
 }
