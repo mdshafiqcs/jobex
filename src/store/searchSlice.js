@@ -10,8 +10,8 @@ const initialState = {
   locationId: "",
   categoryId: "",
   salary: {
-    min: 10, 
-    max: 100000000,
+    min: undefined, 
+    max: undefined,
   },
   jobs: [],
 }
@@ -46,7 +46,7 @@ const searchSlice = createSlice({
       };
     },
     clearFilter: (state, action) => {
-      state.salary = { min: 10, max: 100000000 };
+      state.salary = { min: undefined, max: undefined };
       state.locationId = "";
       state.categoryId = "";
     },
