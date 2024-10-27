@@ -15,7 +15,7 @@ function Jobs() {
   const [currentPage, setCurrentPage] =  useState(1);
   const [limit, setLimit] =  useState(10);
 
-  const {loading,  paginateOption } = useGetJobs(currentPage, limit)
+  const {loading,  paginateOption } = useGetJobs({currentPage, limit})
 
 
   return (
