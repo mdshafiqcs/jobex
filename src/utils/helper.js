@@ -16,7 +16,17 @@ function debounce(func, delay) {
   };
 }
 
+export const formatPrice = (price)  => {
+  const formater = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  })
+
+  return formater.format(price);
+}
+
 export default {
   getDate,
   debounce,
+  formatPrice,
 }
