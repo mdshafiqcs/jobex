@@ -44,7 +44,7 @@ export default function SearchJob() {
             <FilterCard />
           </div>
 
-          <div>
+          <div className='flex-1'>
 
             <div className='my-5 flex min-w-[400px] md:w-[80%] xl:w-[70%] h-[50px] shadow-lg border border-slate-200 pl-3 rounded-full items-center gap-4 mx-auto overflow-hidden'>
               <input 
