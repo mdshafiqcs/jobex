@@ -7,6 +7,7 @@ import { Heart } from 'lucide-react'
 import moment from 'moment';
 import { useSelector } from 'react-redux'
 import { ApplyButton } from '.'
+import { helper } from '@/utils'
 
 function JobCard({job}) {
   const timeAgo = moment(job.createdAt).fromNow();
@@ -17,7 +18,7 @@ function JobCard({job}) {
 
       <div>
         <h1 className='font-medium text-slate-700'>{job.title}</h1>
-        <p className='text-sm text-sky-800'>{job.location}</p>
+        <p className='text-sm text-sky-800'>{job.location.name}</p>
       </div>
       <div>
         
@@ -27,7 +28,11 @@ function JobCard({job}) {
       <div className='flex flex-wrap gap-2 my-2'>
         <Badge className='text-cyan-700' variant="outline">{job.positions} Positions</Badge>
         <Badge className='text-cyan-700' variant="outline">{job.jobType}</Badge>
-        <Badge className='text-cyan-700' variant="outline">{job.salary} LPA</Badge>
+        <Badge className='text-cyan-700' variant="outline">
+          {
+            job.isNegotiable ? "Negotiable" : <span>{helper.formatPrice(job.minSalary)} - {helper.formatPrice(job.maxSalary)} Yearly</span>
+          }
+        </Badge>
       </div>
       <div className='flex justify-between items-center mt-5'>
         <div className='flex gap-2'>
