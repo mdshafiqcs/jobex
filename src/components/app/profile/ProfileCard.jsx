@@ -16,8 +16,8 @@ function ProfileCard() {
     <div className='border border-gray-200 rounded-xl my-5 p-5'>
 
         <div className='flex flex-col sm:flex-row items-center gap-4'>
-          <Avatar className='h-24 w-24 border-2 boder-teal-600 p-3'>
-            <AvatarImage src={src}/>
+          <Avatar className='h-24 w-24 border-2 boder-teal-600'>
+            <AvatarImage src={src} className='h-full w-full object-cover'/>
           </Avatar>
           <div className='flex w-full flex-col  justify-between items-start'>
             <div className='flex items-center w-full'>
