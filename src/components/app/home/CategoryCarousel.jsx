@@ -21,7 +21,7 @@ function CategoryCarousel() {
     "Fullstack Web Developer",
     "Graphics Designer",
     "Blockchain",
-    "Video Editing",
+    "Video Editor",
   ]
 
   const dispatch = useDispatch();
