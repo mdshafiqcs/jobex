@@ -37,7 +37,7 @@ function JobDetail({job}) {
             </Badge>
           </div>
         </div>
-        <ApplyButton job={job} />
+        <ApplyButton job={job} className="hidden md:inline-block" />
       </div> 
       {/* title ends  */}
 
@@ -82,6 +82,10 @@ function JobDetail({job}) {
 
         </h1>
 
+      </div>
+
+      <div className='flex justify-center my-10'>
+        <ApplyButton job={job} className=" min-w-[70%] md:hidden" />
       </div>
 
 
