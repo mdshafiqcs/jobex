@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { routes } from '@/constants';
+import { cn } from '@/lib/utils';
 import { jobService } from '@/services';
 import { applyJob } from '@/store/jobSlice';
 import { getErrMsg } from '@/utils';
@@ -9,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
-function ApplyButton({job}) {
+function ApplyButton({job, className}) {
   const [loading, setLoading] = useState(false); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ function ApplyButton({job}) {
   return (
     <Button 
     size="sm" 
-    className="bg-cyan-600 hover:bg-cyan-700" 
+    className={cn("bg-cyan-600 hover:bg-cyan-700" , className)} 
     disabled={isApplied || loading} 
     onClick={apply}
     >
