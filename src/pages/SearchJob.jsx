@@ -17,7 +17,7 @@ export default function SearchJob() {
   const jobs = useSelector(state => state.search.jobs) || []
   const keyword = useSelector(state => state.search.keyword)
   const [query, setQuery] = React.useState(keyword || '');
-  const [limit, setLimit] = useState(9);
+  const [limit, setLimit] = useState(200);
   const [currentPage, setCurrentPage] = useState(1);
 
   const {loading,  paginateOption } = useSearchJobs({currentPage, limit})

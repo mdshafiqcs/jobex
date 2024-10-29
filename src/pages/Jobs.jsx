@@ -13,7 +13,7 @@ function Jobs() {
   const jobs = useSelector(state => state.job.allJob) || []
 
   const [currentPage, setCurrentPage] =  useState(1);
-  const [limit, setLimit] =  useState(9);
+  const [limit, setLimit] =  useState(200);
 
   const {loading,  paginateOption } = useGetJobs({currentPage, limit})
 
