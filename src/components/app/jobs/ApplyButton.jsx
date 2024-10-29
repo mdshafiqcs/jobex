@@ -53,7 +53,7 @@ function ApplyButton({job, className}) {
   return (
     <Button 
     size="sm" 
-    className={cn("bg-orange-600 hover:bg-cyan-700" , className)} 
+    className={cn("bg-orange-600 hover:bg-orange-700" , className)} 
     disabled={isApplied || loading} 
     onClick={apply}
     >
