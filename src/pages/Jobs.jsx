@@ -13,14 +13,14 @@ function Jobs() {
   const jobs = useSelector(state => state.job.allJob) || []
 
   const [currentPage, setCurrentPage] =  useState(1);
-  const [limit, setLimit] =  useState(10);
+  const [limit, setLimit] =  useState(9);
 
   const {loading,  paginateOption } = useGetJobs({currentPage, limit})
 
 
   return (
 
-    <div className='pb-20'>
+    <div className='pb-4'>
 
         {loading ?
         <div className='flex justify-center items-center h-80 mx-auto'>
@@ -28,7 +28,7 @@ function Jobs() {
         </div>
         : 
           jobs.length <= 0 ? <div className='text-center p-4'>No jobs found</div> :
-          <div className=' h-[88vh] p-1 pb-10 pt-3'>
+          <div className=' p-1 pb-10 pt-3'>
             <h1 className='mb-2 font-medium text-slate-700'>Search Result: ({paginateOption?.itemCount || 0})</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3'>
               {

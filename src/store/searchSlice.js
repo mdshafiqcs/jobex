@@ -4,8 +4,6 @@ import { PURGE } from "redux-persist";
 
 
 const initialState = {
-  currentPage: 1,
-  limit: 10,
   keyword: "",
   locationId: "",
   categoryId: "",
@@ -24,12 +22,7 @@ const searchSlice = createSlice({
       const items = action.payload || [];
       state.jobs = items;
     },
-    setCurrentPage: (state, action) => {
-      state.currentPage = action.payload || 1;
-    },
-    setLimit: (state, action) => {
-      state.limit = action.payload || 10;
-    },
+
     setKeyword: (state, action) => {
       state.keyword = action.payload || "";
     },
@@ -60,8 +53,6 @@ const searchSlice = createSlice({
 
 export const { 
   addSearchedJobs, 
-  setCurrentPage, 
-  setLimit, 
   setKeyword, 
   setLocationId, 
   setCategoryId, 

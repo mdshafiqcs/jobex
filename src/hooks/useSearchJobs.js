@@ -7,13 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 
-const useSearchJobs = () => {
+const useSearchJobs = ({currentPage, limit}) => {
   const dispatch = useDispatch();
   const [paginateOption, setPaginateOption] = useState({});
   const [loading, setLoading] = useState(false);
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-  const currentPage = useSelector(state => state.search.currentPage);
-  const limit = useSelector(state => state.search.limit);
   const keyword = useSelector(state => state.search.keyword);
   // const locationId = useSelector(state => state.search.locationId);
   // const categoryId = useSelector(state => state.search.categoryId);
