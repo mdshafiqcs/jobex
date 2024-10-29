@@ -57,7 +57,7 @@ function JobCard({job}) {
             {daysLeftText}
           </Button>
         </div>
-        <Button size="sm" variant="ghost" className="rounded-full"> <Heart/> </Button>
+        {/* <Button size="sm" variant="ghost" className="rounded-full"> <Heart/> </Button> */}
       </div>
       
     </div>
