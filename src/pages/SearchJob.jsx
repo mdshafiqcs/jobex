@@ -35,7 +35,7 @@ export default function SearchJob() {
   return (
       <>
 
-          <div>
+          <div className='pb-20'>
 
             <div className='mb-5 flex min-w-[300px] w-[70%] lg:w-[60%] xl:w-[50%] h-[50px] shadow-lg border border-slate-200 pl-3 rounded-full items-center gap-4 mx-auto mt-5 overflow-hidden'>
               <input 
@@ -60,7 +60,7 @@ export default function SearchJob() {
               </div>
               : 
                 jobs.length <= 0 ? <div className='text-center p-4'>No jobs found</div> :
-                <div className='h-[88vh] overflow-y-auto p-1 pb-10 pt-0'>
+                <div className='h-[88vh] p-1 pb-10 pt-0'>
                   <h1 className='mb-2 font-medium text-slate-700'>Search Result: ({paginateOption?.itemCount || 0})</h1>
                   <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3'>
                     {
