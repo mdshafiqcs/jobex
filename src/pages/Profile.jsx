@@ -10,9 +10,6 @@ function Profile() {
   return (
     <>
       <ProfileCard/>
-      {
-        user.role && user.role === UserRoleEnum.jobseeker && <AllAppliedJobs/>
-      }
       
     </>
   )

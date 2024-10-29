@@ -13,6 +13,7 @@ export const ApplicationStatusEnum = {
 export const routes = {
   jobs: "/jobs",
   searchJob: "/search-job",
+  appliedJobs: "/applied-jobs",
   browse: "/browse",
   profile: "/profile",
   login: "/login",

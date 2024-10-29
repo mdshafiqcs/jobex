@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { routes } from '@/constants'
+import { routes, UserRoleEnum } from '@/constants'
 import { Popover, PopoverContent, PopoverTrigger, } from "@/components/ui/popover"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import LogoutButton from './LogoutButton'
@@ -39,11 +39,20 @@ function AvatarButton() {
       <PopoverContent className="p-0 max-w-40 bg-white shadow-md rounded-lg">
         <ul >
           <li>
-            
             <Link to={routes.profile} className="block px-4 py-1.5 pt-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md" onClick={closePopover}>
               View Profile
             </Link>
           </li>
+          
+            {
+              user.role && user.role === UserRoleEnum.jobseeker  && 
+              <li>
+                <Link to={routes.appliedJobs} className="block px-4 py-1.5 pt-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md" onClick={closePopover}>
+                  Applied Jobs
+                </Link>
+              </li>
+            }
+          
           <li>
             <LogoutButton closePopover={closePopover}/>
           </li>
