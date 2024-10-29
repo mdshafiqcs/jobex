@@ -13,19 +13,21 @@ function ProfileCard() {
   const src = user?.profile?.profilePhoto || "https://github.com/shadcn.png";
 
   return (
-    <div className='border border-gray-200 rounded-xl my-5 p-8'>
-        <div className='flex justify-between'>
-          <div className='flex items-center gap-4'>
-            <Avatar className='h-24 w-24'>
-              <AvatarImage src={src}/>
-            </Avatar>
-            <div>
-              <h1 className='font-medium text-xl text-slate-700'>{user?.fullname || "User"}</h1>
-              <p  className='text-slate-600'>{user?.profile?.bio || "You bio will be here"}</p>
+    <div className='border border-gray-200 rounded-xl my-5 p-5'>
+
+        <div className='flex flex-col sm:flex-row items-center gap-4'>
+          <Avatar className='h-24 w-24 border-2 boder-teal-600 p-3'>
+            <AvatarImage src={src}/>
+          </Avatar>
+          <div className='flex w-full flex-col  justify-between items-start'>
+            <div className='flex items-center w-full'>
+              <h1 className='font-medium text-lg sm:text-xl text-slate-700'>{user?.fullname || "User"}</h1>
+              <EditProfileDialog/>
             </div>
+            <p  className='text-slate-600'>{user?.profile?.bio || "You bio will be here"}</p>
           </div>
-          <EditProfileDialog/>
         </div>
+
         <div className='my-5'>
           <div className='flex items-center gap-3  mb-2'>
             <Mail className='text-slate-600'/>
