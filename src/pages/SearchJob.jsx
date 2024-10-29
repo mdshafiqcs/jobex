@@ -37,9 +37,9 @@ export default function SearchJob() {
         
 
         <div className='flex gap-5 mx-auto '>
-          <div className='w-[100px] md:w-[200px]'>
+          {/* <div className='w-[100px] md:w-[200px]'>
             <FilterCard />
-          </div>
+          </div> */}
 
           <div className='flex-1'>
 

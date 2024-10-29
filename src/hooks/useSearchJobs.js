@@ -15,9 +15,9 @@ const useSearchJobs = () => {
   const currentPage = useSelector(state => state.search.currentPage);
   const limit = useSelector(state => state.search.limit);
   const keyword = useSelector(state => state.search.keyword);
-  const locationId = useSelector(state => state.search.locationId);
-  const categoryId = useSelector(state => state.search.categoryId);
-  const salary = useSelector(state => state.search.salary);
+  // const locationId = useSelector(state => state.search.locationId);
+  // const categoryId = useSelector(state => state.search.categoryId);
+  // const salary = useSelector(state => state.search.salary);
 
   useEffect(() => {
 
@@ -25,7 +25,8 @@ const useSearchJobs = () => {
       setLoading(true);
       try {
 
-        const response = await jobService.searchJobs({currentPage, limit, keyword, locationId, categoryId, minSalary: salary.min, maxSalary:salary.max });
+        // const response = await jobService.searchJobs({currentPage, limit, keyword, locationId, categoryId, minSalary: salary.min, maxSalary:salary.max });
+        const response = await jobService.searchJobs({currentPage, limit, keyword, });
         dispatch(addSearchedJobs(response.jobs))
         setPaginateOption({...response, jobs: undefined});
 
@@ -37,7 +38,7 @@ const useSearchJobs = () => {
     }
     fetchJobs();
 
-  }, [dispatch, isLoggedIn, currentPage, limit, keyword, locationId, categoryId, salary])
+  }, [dispatch, isLoggedIn, currentPage, limit, keyword])
 
   return { paginateOption, loading }
 }
