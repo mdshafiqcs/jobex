@@ -33,7 +33,28 @@ const registerCompany = async (formData) => {
   return responseBody;
 }
 
+const getCompanyById = async (companyId) => {
+
+  try {
+    const response = await axios.get(
+      endpoints.recruiterCompanyById(companyId),
+      {
+        headers: {
+        'Accept': 'application/json',
+        }, 
+        withCredentials: true,
+      }
+    );
+  
+    return response.data.data;
+  } catch (error) {
+    throw error.response.data; 
+  }
+}
+
+
 export default {
   getAllCompanies,
   registerCompany,
+  getCompanyById,
 }

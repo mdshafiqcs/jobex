@@ -22,14 +22,14 @@ function CompanyActionButton({company}) {
       </PopoverTrigger>
       <PopoverContent className="p-0 max-w-40 bg-white shadow-md    rounded-lg">
         <ul >
-          <li>
+          {/* <li>
           <Link to={`${routes.recruiterEditCompany}/${company?._id}`} >
             <button className="flex items-center px-4 py-1 pb-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md w-full text-start " >
             <span>Edit</span>
             </button>
           </Link>
           
-          </li>
+          </li> */}
           <li>
           <Link to={`${routes.recruiterCompanies}/${company?._id}`} >
             <button className="flex items-center px-4 py-1 pb-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md w-full text-start " >
