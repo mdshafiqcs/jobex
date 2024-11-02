@@ -7,6 +7,7 @@ function Companies() {
   return (
     <div className='my-10'>
       <SearchBar />
+      <hr className='w-full mb-10' />
       <CompanyTable />
     </div>
   )

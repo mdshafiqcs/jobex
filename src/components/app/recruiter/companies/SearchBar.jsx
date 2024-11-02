@@ -9,11 +9,13 @@ function SearchBar() {
   return (
     <div className='my-5 flex items-center justify-between'>
       <div>
-        <Input
+        {/* <Input
         type="text"
         placeholder="Filter by name"
-        />
+        /> */}
+        <h1 className='text-2xl font-bold text-orange-600 '>All Companies</h1>
       </div>
+      
       <Link to={routes.recruiterCreateCompany}>
         <Button 
         size="sm" 

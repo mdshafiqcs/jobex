@@ -35,7 +35,15 @@ function CreateCompanyPage() {
   });
 
   const onSubmit = (data) => {
-    registerCompany(data);
+
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('description', data.description);
+    formData.append('website', data.website);
+    formData.append('location', data.location);
+    formData.append('logo', data.logo[0]);
+
+    registerCompany(formData);
   }
 
   return (
@@ -43,7 +51,7 @@ function CreateCompanyPage() {
       <div className='w-full max-w-2xl p-5 border rounded-xl shadow-md'>
         <h2 className='text-center text-xl text-orange-600 font-bold'>Add New Company</h2>
         <p className='text-center'>You can not change company name later</p>
-        <form className='mt-5' onSubmit={handleSubmit(onSubmit)} >
+        <form className='mt-5' onSubmit={handleSubmit(onSubmit)} encType='multipart/form-data' >
 
           <div>
             <Label>Company Name</Label>
@@ -74,9 +82,8 @@ function CreateCompanyPage() {
             id="website" 
             placeholder="Website Url" 
             className="boder-2 mb-3 mt-1"
-            {...register('website', {required: "Website Url is required"})}
+            {...register('website')}
             />
-            {errors.website && <p className='text-red-500'>{errors.website.message}</p>}
           </div>
 
           <div>
@@ -86,9 +93,8 @@ function CreateCompanyPage() {
             id="location" 
             placeholder="company location" 
             className="boder-2 mb-3 mt-1"
-            {...register('location', {required: "company location is required"})}
+            {...register('location')}
             />
-            {errors.location && <p className='text-red-500'>{errors.location.message}</p>}
           </div>
 
           <div>
@@ -96,11 +102,11 @@ function CreateCompanyPage() {
             <Input 
             type="file" 
             id="logo" 
-            placeholder="company logo" 
+            accept="image/png, image/jpg, image/jpeg"
             className="boder-2 mb-3 mt-1"
-            {...register('logo', {required: "company logo is required"})}
+            {...register('logo')}
             />
-            {errors.logo && <p className='text-red-500'>{errors.logo.message}</p>}
+
           </div>
 
           <LoadingButton text="Save" loading={isLoading} />

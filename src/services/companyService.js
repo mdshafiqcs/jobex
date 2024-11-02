@@ -22,10 +22,7 @@ const registerCompany = async (formData) => {
   const respnose = await fetch(endpoints.recruiterRegisterCompany, {
     method: "POST",
     credentials:"include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
+    body: formData,
   });
 
   const responseBody = await respnose.json();
