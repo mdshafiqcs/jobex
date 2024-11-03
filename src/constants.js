@@ -27,4 +27,5 @@ export const routes = {
   recruiterEditCompany: "/rc/company/edit",
   recruiterJobs: "/rc/jobs",
   recruiterJobsByCompany: "/rc/jobs/company",
+  recruiterApplications: "/rc/applications",
 }

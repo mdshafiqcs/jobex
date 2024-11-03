@@ -16,6 +16,9 @@ import EditCompanyPage from "./EditCompanyPage";
 import JobsByCompany from "./JobsByCompany";
 import SearchJob from "./SearchJob";
 import AppliedJobsPage from "./AppliedJobsPage";
+import RecruiterJobDetailsPage from "./RecruiterJobDetailsPage";
+import RecruiterApplicationsByJobPage from "./RecruiterApplicationsByJobPage";
+
 
 export {
   Home,
@@ -36,4 +39,6 @@ export {
   JobsByCompany,
   SearchJob,
   AppliedJobsPage,
+  RecruiterJobDetailsPage,
+  RecruiterApplicationsByJobPage,
 }

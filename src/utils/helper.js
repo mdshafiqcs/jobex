@@ -27,6 +27,15 @@ export const formatPrice = (price)  => {
   return formater.format(price);
 }
 
+export const formatNumber = (price)  => {
+  const formater = new Intl.NumberFormat("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 0,
+  })
+
+  return formater.format(price);
+}
+
 export const getDaysLeft = (timestamp) => {
   const deadlineDate = new Date(timestamp);
   const todayDate = new Date();
@@ -42,4 +51,5 @@ export default {
   debounce,
   formatPrice,
   getDaysLeft,
+  formatNumber,
 }

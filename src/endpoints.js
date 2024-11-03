@@ -75,7 +75,7 @@ const recruiterUpdateCompany = (companyId) => {
 
 const recruiterPostJob = `${recruiterUrl}/job/post-job`
 
-const recruiterAllJobs = (currentPage = 1, limit = 10) => {
+const recruiterAllJobs = ({currentPage = 1, limit = 10}) => {
   return `${recruiterUrl}/job?page=${currentPage}&limit=${limit}`;
 }
 
@@ -83,7 +83,7 @@ const recruiterJobById = (jobId) => {
   return `${recruiterUrl}/job/id=${jobId}`;
 }
 
-const recruiterAllApplications = (jobId, currentPage = 1, limit = 10) => {
+const recruiterApplicationsByJobId = ({jobId, currentPage = 1, limit = 10}) => {
   return `${recruiterUrl}/application/jobId=${jobId}?page=${currentPage}&limit=${limit}`;
 }
 
@@ -116,7 +116,7 @@ export default {
   recruiterPostJob,
   recruiterAllJobs,
   recruiterJobById,
-  recruiterAllApplications,
+  recruiterApplicationsByJobId,
   recruiterUpdateApplication,
   userApplyJob,
 }

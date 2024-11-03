@@ -99,10 +99,30 @@ const applyJob = async(jobId) => {
   }
 }
 
+const getRecruiterAllJobs = async({currentPage = 1, limit = 9}) => {
+
+  try {
+    const response = await axios.get(
+      endpoints.recruiterAllJobs({currentPage, limit}), 
+        {
+          headers: {
+          'Accept': 'application/json',
+          }, 
+          withCredentials: true,
+        }
+      );
+    
+      return response.data.data;
+  } catch (error) {
+    throw error.response.data; 
+  }
+}
+
 export default {
   getAllJobs,
   getJobById,
   getAppliedJobs,
   applyJob,
   searchJobs,
+  getRecruiterAllJobs,
 }
