@@ -114,6 +114,19 @@ function Header() {
                     </NavLink>
                   </li>
 
+                  <li onClick={closeMenu} >
+                    <NavLink to='/applied-jobs' className={({ isActive }) =>
+                      `block py-2 font-medium transition hover:text-orange-700 lg:p-0 
+                      ${
+                        isActive
+                          ? "text-orange-700"
+                          : "text-gray-700"
+                      }`
+                    }>
+                      Applied Jobs
+                    </NavLink>
+                  </li>
+
                   <li>
                     <LogoutButton onComplete={handleLogout} className="text-[16px] font-medium hover:bg-white hover:text-orange-700 px-0 " />
                   </li>
