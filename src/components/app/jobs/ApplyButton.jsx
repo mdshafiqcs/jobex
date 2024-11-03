@@ -50,6 +50,8 @@ function ApplyButton({job, className}) {
     }
   }
 
+  
+
   return (
     <Button 
     size="sm" 
@@ -57,7 +59,10 @@ function ApplyButton({job, className}) {
     disabled={isApplied || loading} 
     onClick={apply}
     >
-      {isApplied? "Already Applied" : loading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> please wait</> : "Apply Now"}
+      {isApplied? "Already Applied" : loading ? 
+      <div className='flex items-center justify-center'>
+        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> <span>please wait</span>
+      </div> : "Apply Now"}
     </Button>
   )
 }
