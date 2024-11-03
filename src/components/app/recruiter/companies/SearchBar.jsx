@@ -13,7 +13,7 @@ function SearchBar() {
         type="text"
         placeholder="Filter by name"
         /> */}
-        <h1 className='text-2xl font-bold text-orange-600 '>All Companies</h1>
+        <h1 className='text-lg sm:text-xl md:text-2xl font-bold text-orange-600 '>All Companies</h1>
       </div>
       
       <Link to={routes.recruiterCreateCompany}>
