@@ -33,11 +33,11 @@ function Header() {
       path: routes.recruiterCompanies,
       isActive: userData && userData.role === UserRoleEnum.recruiter,
     },
-    {
-      name: "Jobs",
-      path: routes.recruiterJobs,
-      isActive: userData && userData.role === UserRoleEnum.recruiter,
-    },
+    // {
+    //   name: "Jobs",
+    //   path: routes.recruiterJobs,
+    //   isActive: userData && userData.role === UserRoleEnum.recruiter,
+    // },
   ]
 
   const menuRef = useRef(null);

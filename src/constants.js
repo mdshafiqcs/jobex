@@ -30,4 +30,5 @@ export const routes = {
   recruiterSelectCompany: "/rc/jobs/create/select-company",
   recruiterJobsByCompany: "/rc/jobs/company",
   recruiterApplications: "/rc/applications",
+  recruiterApplicationDetails: "/rc/application/details",
 }

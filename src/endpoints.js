@@ -87,6 +87,11 @@ const recruiterApplicationsByJobId = ({jobId, currentPage = 1, limit = 10}) => {
   return `${recruiterUrl}/application/jobId=${jobId}?page=${currentPage}&limit=${limit}`;
 }
 
+const recruiterApplicationById = (applictionId) => {
+
+  return `${recruiterUrl}/application/id=${applictionId}`;
+}
+
 const recruiterUpdateApplication = `${recruiterUrl}/application/update`
 
 
@@ -117,6 +122,7 @@ export default {
   recruiterAllJobs,
   recruiterJobById,
   recruiterApplicationsByJobId,
+  recruiterApplicationById,
   recruiterUpdateApplication,
   userApplyJob,
 }
