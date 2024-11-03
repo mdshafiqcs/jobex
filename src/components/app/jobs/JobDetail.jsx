@@ -7,6 +7,7 @@ import { ApplyButton } from '.';
 import { helper } from '@/utils';
 import { useSingleJob } from '@/hooks';
 import { cn } from '@/lib/utils';
+import { BackButton } from '@/components';
 
 function JobDetail({job}) {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn) || false;
@@ -23,7 +24,7 @@ function JobDetail({job}) {
 
   return (
     <div className='my-10'>
-
+      
       <div className='flex justify-between'>
         <div>
           <h1 className='font-bold text-xl md:text-2xl xl:text-3xl text-slate-600'>{job.title}</h1>

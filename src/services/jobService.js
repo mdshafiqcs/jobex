@@ -118,6 +118,31 @@ const getRecruiterAllJobs = async({currentPage = 1, limit = 9}) => {
   }
 }
 
+const recruiterPostJob = async(data) => {
+
+  try {
+    const response = await axios.post(
+      endpoints.recruiterPostJob, 
+      {
+        ...data
+      },
+      {
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        }, 
+        withCredentials: true,
+      }
+    );
+  
+    return response.data;
+  }catch (error) {
+    throw error.response.data; 
+  }
+}
+
+
+
 export default {
   getAllJobs,
   getJobById,
@@ -125,4 +150,5 @@ export default {
   applyJob,
   searchJobs,
   getRecruiterAllJobs,
+  recruiterPostJob,
 }

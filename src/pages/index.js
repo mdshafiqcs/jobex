@@ -18,6 +18,8 @@ import SearchJob from "./SearchJob";
 import AppliedJobsPage from "./AppliedJobsPage";
 import RecruiterJobDetailsPage from "./RecruiterJobDetailsPage";
 import RecruiterApplicationsByJobPage from "./RecruiterApplicationsByJobPage";
+import RecruiterCreateJobPage from "./RecruiterCreateJobPage";
+import RecruiterSelectCompanyPage from "./RecruiterSelectCompanyPage";
 
 
 export {
@@ -41,4 +43,6 @@ export {
   AppliedJobsPage,
   RecruiterJobDetailsPage,
   RecruiterApplicationsByJobPage,
+  RecruiterCreateJobPage,
+  RecruiterSelectCompanyPage,
 }

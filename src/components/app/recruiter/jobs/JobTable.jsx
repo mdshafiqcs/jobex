@@ -34,7 +34,7 @@ function JobTable() {
             <TableHead> SL </TableHead>
             <TableHead> Title </TableHead>
             <TableHead> Company </TableHead>
-            <TableHead> Posted On </TableHead>
+            <TableHead className="whitespace-nowrap"> Posted On </TableHead>
             <TableHead> Deadline </TableHead>
             <TableHead> Applicants </TableHead>
             <TableHead> Action </TableHead>

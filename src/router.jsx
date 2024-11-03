@@ -1,7 +1,7 @@
 
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 import { AuthLayout, PageNotFound, RoleProtectedRoute } from './components'
-import { About, AppliedJobsPage, Companies, CompanyDetails, Contact, CreateCompanyPage, EditCompanyPage, Home, JobDetailsPage, Jobs, JobsByCompany, Login, PrivacyPolicy, Profile, RecruiterApplicationsByJobPage, RecruiterJobDetailsPage, RecruiterJobs, SearchJob, Signup, TermsCondition } from './pages'
+import { About, AppliedJobsPage, Companies, CompanyDetails, Contact, CreateCompanyPage, EditCompanyPage, Home, JobDetailsPage, Jobs, JobsByCompany, Login, PrivacyPolicy, Profile, RecruiterApplicationsByJobPage, RecruiterCreateJobPage, RecruiterJobDetailsPage, RecruiterJobs, RecruiterSelectCompanyPage, SearchJob, Signup, TermsCondition } from './pages'
 import App from './App'
 import { routes, UserRoleEnum } from './constants'
 
@@ -45,6 +45,25 @@ const router = createBrowserRouter(
         <AuthLayout authRequired > 
           <RoleProtectedRoute 
             element={<RecruiterJobs />} 
+            restrictedRoles={[UserRoleEnum.jobseeker, null, undefined, ""]} 
+          />
+        </AuthLayout>  
+      )} />
+
+    
+      <Route path={routes.recruiterSelectCompany} element={( 
+        <AuthLayout authRequired > 
+          <RoleProtectedRoute 
+            element={<RecruiterSelectCompanyPage />} 
+            restrictedRoles={[UserRoleEnum.jobseeker, null, undefined, ""]} 
+          />
+        </AuthLayout>  
+      )} />
+
+      <Route path={routes.recruiterCreateJob + "/:companyId"} element={( 
+        <AuthLayout authRequired > 
+          <RoleProtectedRoute 
+            element={<RecruiterCreateJobPage />} 
             restrictedRoles={[UserRoleEnum.jobseeker, null, undefined, ""]} 
           />
         </AuthLayout>  
