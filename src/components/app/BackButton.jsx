@@ -12,6 +12,6 @@ export default function BackButton({className}) {
   }
 
   return (
-    <ArrowLeft onClick={goBack} className={cn('absolute top-5 left-5 cursor-pointer text-slate-600', className)} />
+    <ArrowLeft onClick={goBack} className={cn('inline-block cursor-pointer text-slate-600', className)} />
   )
 }
