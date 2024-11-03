@@ -8,6 +8,7 @@ import Header from "./app/header/Header";
 import Footer from "./app/footer/Footer";
 import AuthLayout from "./app/AuthLayout";
 import LoadingButton from "./app/LoadingButton";
+import BackButton from "./app/BackButton";
 
 export {
   Logo,
@@ -20,4 +21,5 @@ export {
   Footer,
   AuthLayout,
   LoadingButton,
+  BackButton,
 }
