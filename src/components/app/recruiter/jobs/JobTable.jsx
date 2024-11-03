@@ -34,6 +34,7 @@ function JobTable() {
             <TableHead> SL </TableHead>
             <TableHead> Title </TableHead>
             <TableHead> Company </TableHead>
+            <TableHead> Posted On </TableHead>
             <TableHead> Deadline </TableHead>
             <TableHead> Applicants </TableHead>
             <TableHead> Action </TableHead>
@@ -45,13 +46,17 @@ function JobTable() {
                 <TableRow  key={item._id}>
                   <TableCell className="text-slate-600">{index + 1}</TableCell>
 
-                  <TableCell className="text-slate-600"> 
+                  <TableCell className="text-slate-600 whitespace-nowrap"> 
                     { item.title }
                   </TableCell >
 
-                  <TableCell className="text-slate-600"> {item?.company?.name || ""} </TableCell >
+                  <TableCell className="text-slate-600 whitespace-nowrap"> {item?.company?.name || ""} </TableCell >
                   
-                  <TableCell className="text-slate-600"> 
+                  <TableCell className="text-slate-600 whitespace-nowrap"> 
+                    { helper.getDate(item.createdAt) }
+                  </TableCell >
+
+                  <TableCell className="text-slate-600 whitespace-nowrap"> 
                     { helper.getDate(item.deadline) }
                   </TableCell >
 
