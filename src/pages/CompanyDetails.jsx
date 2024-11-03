@@ -29,15 +29,15 @@ function CompanyDetails() {
               <div className='flex justify-center'>
                 <div className='flex flex-col justify-center items-center'>
                   <img src={data.company.logo} alt="company logo" className='h-20 w-auto' />
-                  <h1 className='text-2xl font-bold text-orange-600'>{data.company.name}</h1>
+                  <h1 className='text-lg sm:text-xl md:text-2xl font-bold text-orange-600 mt-3'>{data.company.name}</h1>
                 </div>
               </div>
 
               <div className='mt-5 flex flex-col gap-2.5'>
-                <p><span className='font-bold'>Description:</span> {data.company.description} </p>
-
                 <p><span className='font-bold'>Website:</span> {data.company.website}</p>
                 <p><span className='font-bold'>Location:</span>  {data.company.location}</p>
+                <p><span className='font-bold'>Description:</span> {data.company.description} </p>
+
               </div>
             </div>
 
