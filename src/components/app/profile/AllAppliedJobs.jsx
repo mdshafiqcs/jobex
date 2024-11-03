@@ -39,10 +39,10 @@ function AllAppliedJobs() {
           {
             appliedJobs.map((item, index) => (
                 <TableRow  key={item._id}>
-                  <TableCell className="text-slate-600">{index + 1}</TableCell>
-                  <TableCell className="text-slate-600"> {helper.getDate(item.createdAt)} </TableCell >
-                  <TableCell className="text-slate-600"> {item.job?.title} </TableCell>
-                  <TableCell className="text-slate-600 font-medium"> {item.job?.company?.name} </TableCell>
+                  <TableCell className="text-slate-600 ">{index + 1}</TableCell>
+                  <TableCell className="text-slate-600 whitespace-nowrap"> {helper.getDate(item.createdAt)} </TableCell >
+                  <TableCell className="text-slate-600 whitespace-nowrap"> {item.job?.title} </TableCell>
+                  <TableCell className="text-slate-600 font-medium whitespace-nowrap"> {item.job?.company?.name} </TableCell>
                   <TableCell> 
                     <Badge className={`${item.status === ApplicationStatusEnum.pending ? "bg-amber-500 hover:bg-amber-600" : item.status === ApplicationStatusEnum.accepted ? "bg-teal-600 hover:bg-teal-700" : "bg-red-600 hover:bg-red-700"}`}>
                       {item.status}
