@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import React from 'react'
 import { helper } from '@/utils';
 import { cn } from '@/lib/utils';
+import { BackButton } from '@/components';
 
 function RecruiterJobDetail({job}) {
 
@@ -17,8 +18,8 @@ function RecruiterJobDetail({job}) {
   }
 
   return (
-    <div className='my-10'>
-
+    <div className=' '>
+      <BackButton className="my-5" />
       <div className='flex justify-between'>
         <div>
           <h1 className='font-bold text-xl md:text-2xl xl:text-3xl text-slate-600'>{job.title}</h1>

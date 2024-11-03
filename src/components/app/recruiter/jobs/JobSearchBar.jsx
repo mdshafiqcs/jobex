@@ -16,7 +16,7 @@ function JobSearchBar() {
         <h1 className='text-2xl font-bold text-orange-600 '>All Jobs</h1>
       </div>
       
-      <Link to={routes.recruiterCreateCompany}>
+      <Link to={routes.recruiterSelectCompany}>
         <Button 
         size="sm" 
         className="bg-orange-600 hover:bg-orange-700"

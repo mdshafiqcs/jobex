@@ -1,4 +1,4 @@
-import { LoadingButton } from '@/components';
+import { BackButton, LoadingButton } from '@/components';
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea';
@@ -48,7 +48,8 @@ function CreateCompanyPage() {
 
   return (
     <div className='flex justify-center mt-10'>
-      <div className='w-full max-w-2xl p-5 border rounded-xl shadow-md'>
+      <div className='w-full max-w-2xl p-5 border rounded-xl shadow-md relative'>
+        <BackButton className="absolute top-5 left-5" />
         <h2 className='text-center text-xl text-orange-600 font-bold'>Add New Company</h2>
         <p className='text-center'>You can not change company name later</p>
         <form className='mt-5' onSubmit={handleSubmit(onSubmit)} encType='multipart/form-data' >

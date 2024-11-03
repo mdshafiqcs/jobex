@@ -5,6 +5,7 @@ import { companyService } from '../services';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { getErrMsg } from '@/utils';
+import { BackButton } from '@/components';
 
 
 function CompanyDetails() {
@@ -18,7 +19,8 @@ function CompanyDetails() {
   })
 
   return (
-    <div>
+    <div className='relative'>
+      <BackButton className='absolute top-2 left-5' />
       {
         data && data.company && (
           <div className='flex justify-center max-w-xl mx-auto w-full  '>
