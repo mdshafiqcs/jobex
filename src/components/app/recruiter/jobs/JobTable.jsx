@@ -1,34 +1,21 @@
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { routes } from '@/constants';
 import { jobService } from '@/services';
 import { helper } from '@/utils';
 import { useQuery } from '@tanstack/react-query';
-
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
 import { JobActionButton } from '.';
-// import { CompanyActionButton } from './index';
 
 
 function JobTable() {
   
-
-  const companies = useSelector(state => state.company.companies);
-
   const {data} = useQuery({
     queryKey: ['recruiter-jobs'],
     queryFn: async () => await jobService.getRecruiterAllJobs({currentPage: 1, limit: 200}),
   })
 
-  console.log("data = ", data);
-
   return (
-    <div>
-      <Table>
+    <Table>
         <TableHeader>
           <TableRow>
             <TableHead> SL </TableHead>
@@ -73,7 +60,6 @@ function JobTable() {
           
         </TableBody>
       </Table>
-    </div>
   )
 }
 
