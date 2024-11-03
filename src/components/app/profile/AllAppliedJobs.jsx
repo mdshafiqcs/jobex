@@ -31,7 +31,7 @@ function AllAppliedJobs() {
             <TableHead> Date </TableHead>
             <TableHead> Job Role </TableHead>
             <TableHead> Company </TableHead>
-            <TableHead> Status </TableHead>
+            {/* <TableHead> Status </TableHead> */}
             <TableHead> Action </TableHead>
           </TableRow>
         </TableHeader>
@@ -43,11 +43,11 @@ function AllAppliedJobs() {
                   <TableCell className="text-slate-600 whitespace-nowrap"> {helper.getDate(item.createdAt)} </TableCell >
                   <TableCell className="text-slate-600 whitespace-nowrap"> {item.job?.title} </TableCell>
                   <TableCell className="text-slate-600 font-medium whitespace-nowrap"> {item.job?.company?.name} </TableCell>
-                  <TableCell> 
+                  {/* <TableCell> 
                     <Badge className={`${item.status === ApplicationStatusEnum.pending ? "bg-amber-500 hover:bg-amber-600" : item.status === ApplicationStatusEnum.accepted ? "bg-teal-600 hover:bg-teal-700" : "bg-red-600 hover:bg-red-700"}`}>
                       {item.status}
                     </Badge>
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell> 
                     <Link to={`${routes.jobs}/${item?.job?._id}`} >
                       <Button size="sm" className="bg-teal-600 hover:bg-teal-700">
